@@ -2,10 +2,9 @@
 
 let zero = int '0'
 let bit n = (int n) - zero
-let rec exp2 (n:int) = if n = 0 then 1 else 2 * (exp2 (n - 1))
 let rec decimal bits =
   match bits with
-  | b :: bs -> b * (exp2 bs.Length) + (decimal bs)
+  | b :: bs -> b * (pown 2 bs.Length) + (decimal bs)
   | _ -> 0
 
 let mostCommon cs =
