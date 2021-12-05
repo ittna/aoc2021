@@ -12,8 +12,7 @@ let move (x, y) (cmd, v) =
 let input = fsi.CommandLineArgs[1]
 let result = 
   Utils.readLines input
-  |> Seq.map split
-  |> Seq.map parse
+  |> Seq.map (split >> parse)
   |> Seq.fold move (0, 0)
   |> (fun (x, y) -> x * y) 
 

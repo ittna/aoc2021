@@ -13,9 +13,7 @@ let numbers =
 let boards =
   Seq.tail lines
   |> Seq.filter (fun x -> x.Length > 0)
-  |> Seq.map (split ' ')
-  |> Seq.map (Seq.map int)
-  |> Seq.map Seq.toList
+  |> Seq.map (split ' ' >> Seq.map int >> Seq.toList)
   |> Seq.chunkBySize 5
   |> Seq.map Seq.toList
 
