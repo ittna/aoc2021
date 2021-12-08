@@ -18,6 +18,6 @@ let result =
   |> Seq.map (split >> Seq.map int)
   |> Seq.concat
   |> Seq.sort
-  |> (fun s -> sum s (median s))
+  |> (fun s -> distance s (median s))
     
 printfn "Solution: %A" result
